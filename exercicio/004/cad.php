@@ -12,7 +12,7 @@
     </header>
     <main>
         <?php
-            $nome = $_GET["nome"] ?? "Sem nome";
+            $nome = $_GET ["nome"] ?? "Sem nome";
             $sobrenome = $_GET["sobrenome"] ?? "Desconhecido";
 
             echo "<p>É um prazer te conhecere <strong>$nome $sobrenome</strong></p>"
