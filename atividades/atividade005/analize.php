@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <style>
         p {
-            background-color: white;
+            background-color: white; 
             padding: 15px;
             display: block;
             padding: 0px;
@@ -25,12 +25,15 @@
         <h1>analizador de numeros reias</h1>
         <?php
             $numero = $_GET["valor"];
-            $inteiro = floor($_GET["valor"]);
-            $fraçao = $_GET["valor"] - floor($_GET["valor"]) ; 
 
             echo "<p>Analizando o número <strong>$numero</strong> informado pelo usario</p>";
-                echo "<p>A parte inteira do número é <strong>$inteiro</strong></p>";
-                echo "<p>A parte fracionária do número é <strong>$fraçao</strong></p>";
+
+            
+            $inteiro = (int)$numero;
+           $fraçao = $numero - $inteiro;
+
+            echo "<p>A parte inteira do número é <strong>$inteiro</strong></p>";
+            echo "<p>A parte fracionária do número é <strong>$fraçao</strong></p>";
         ?>
 
         <input type="button" value="voltar" id="voltar" onclick="voltar()">

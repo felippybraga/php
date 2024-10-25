@@ -22,12 +22,25 @@
 </head>
 <body>
     <main>
-        <h1>conversor de moedas v1.0</h1>
+        <h1>conversor de moedas v2.0</h1>
         <?php
-            $rais = $_GET ["valor"];
-            $dolar = number_format ($_GET ["valor"] / 5.69, 2);
-   
-            echo "<p>Seus R$ $rais equivalem a US$ $dolar</p>";
+            $inicio = date ("m-d-Y", strtotime("-7 days"));
+            $fim = date ("m-d-Y");
+        
+            $url = 'https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarPeriodo(dataInicial=@dataInicial,dataFinalCotacao=@dataFinalCotacao)?@dataInicial=\''.$inicio.'\'&@dataFinalCotacao=\''.$fim.'\'&$top=1&$orderby=dataHoraCotacao%20desc&$format=json&$select=cotacaoCompra,dataHoraCotacao';
+            
+            $dados = json_decode(file_get_contents($url), true);
+        
+            //var_dump($dados);
+            
+            $cotação = $dados ["value"][0]["cotacaoCompra"];
+
+            $padrao = numfmt_create("pt_BR", numberFormatter::CURRENCY);
+
+            $reais = $_GET["valor"];
+            $dolar = $reais / $cotação;
+
+            echo "<p>Seus ".numfmt_format_CURRENCY ($padrao, $reais, "BRL")." equivalem a ".numfmt_format_CURRENCY ($padrao, $dolar, "USD")."</p>";
         ?>
         <p><strong>*cotação fixa de R$5,69</strong> informada diretamente no codigo</p>
 
