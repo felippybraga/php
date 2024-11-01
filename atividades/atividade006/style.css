@@ -54,11 +54,6 @@ p {
     line-height: 1.5em;
 }
 
-h2, h3, h4 {
-    color: #372991;
-    margin: 0 0 10px 0;
-}
-
 a {
     color: #15142b;
     background-color: rgba(55, 41, 145, 0.1);
@@ -188,41 +183,46 @@ input[type=reset] {
     cursor: pointer;
 }
 
-input[type=reset]:hover {
-    background-color: #c27013;
+/*que eu fiz para o exercicio*/
+section#resultado {
+
+    height: 200px;
+
 }
 
-input[type=button], button {
-    width: 100%;
-    background-color: #372991;
-    font-size: 1em;
-    color: white;
-    padding: 10px 20px;
-    margin: 5px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+h2 {
+    color: #372991;
+    margin: 0 0 10px 0;
 }
 
-input[type=button]:hover, button:hover {
-    background-color: #291f6c;
+div#pai {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100px;
+    height: 113px;
+    margin: auto;
 }
 
-fieldset {
-    border: 0.5px dotted #372991;
+div.divisão {
+    margin: auto;
+    flex-basis: 50px;
+    border-collapse: collapse;
 }
 
-fieldset > legend {
-    font-size: 0.8em;
-    font-weight: 100;
-    background-color: rgba(55, 41, 145, 0.2);
-    padding: 3px 7px;
-    border-radius: 5px;
+div#divisor {
+    border-bottom: 1px solid black ;
+    border-left: 2px solid black;
 }
 
-input[type=radio] + label, input[type=checkbox] + label {
-    display: inline-block;
-    font-size: 1em;
-    background-color: rgba(0, 0, 0, 0);
+div#resultado {
+    border-top: 1px solid black ;
+    border-left: 2px solid black;
 }
+
+div#pai p {
+    text-align: center;
+}
+
+
+
 
