@@ -12,12 +12,12 @@
         $salario = $_GET['sal'] ?? 0;
         $qtSal = intdiv($salario, $minimo);
         $resto = $salario % $minimo;
-    ?>
+    ?> 
     <main>
         <h1>Informe seu salario</h1>
         <form action="<?php echo $_SERVER['PHP_SELF']?>" method="get">
             <label for="sal">Salário</label>
-            <input type="number" name="sal" id="sal" value="" step="0.01">
+            <input type="number" name="sal" id="sal" value="$salario" step="0.01">
             <p>considere o salario minimo de <strong>R$<?=number_format ($minimo, 2, ",", ".")?></strong></p>
             <input type="submit" value="calcular" id="botao">
             <section>

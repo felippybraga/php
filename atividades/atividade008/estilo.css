@@ -98,3 +98,7 @@ section h2 {
 section p {
     margin: auto;
 }
+
+ul {
+    padding: 15px 30px;
+}

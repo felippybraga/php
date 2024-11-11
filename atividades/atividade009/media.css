@@ -10,13 +10,13 @@ body {
     background-image: linear-gradient(180deg, #372991, #15142b);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
+    height: 100%;
 }
 
 main {
     background-color: white;
     width: 500px;
-    height: 300px;
+    height: 500px;
     border-radius: 10px;
     padding: 10px;
     margin: 15px auto;
@@ -30,7 +30,7 @@ h1 {
 
 form{
     background-color: #aea4eb1f;
-    height: 200px;
+    height: 400px;
     padding: 5px;
     padding-top: 30px;
     border-radius:10px;
@@ -38,6 +38,7 @@ form{
 
 
 p, label{
+    background-color: #7467d41f;
     margin: 10px;
     padding: 5px;
     border-radius: 8px;
@@ -63,7 +64,6 @@ input#botao {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    margin-top: 50px;
 }
 
 input#botao:hover {
@@ -86,7 +86,7 @@ section {
     background-color: white;
     margin: 50px auto;
     padding: 20px;
-    width: 400px;
+    width: 600px;
     border-radius: 10px;
 }
 
@@ -96,5 +96,10 @@ section h2 {
 }
 
 section p {
+    background-color: white;
     margin: auto;
+}
+
+ul {
+    padding: 15px 30px;
 }
